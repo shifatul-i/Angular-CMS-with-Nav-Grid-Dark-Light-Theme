@@ -1,3 +1,76 @@
-<p>
-  toolbar works!
-</p>
+<mat-toolbar>
+    <mat-toolbar-row id="toolbar-main" *ngIf="!mobileSearch" [@slideInOut]>
+        <button id="button-menu" mat-icon-button (click)="toggleSidenav()">
+            <span class="flaticon-menu"></span>
+        </button>
+        <!--button id="button-menu" mat-icon-button (click)="toggleSidenav()">
+            <mat-icon aria-label="Menu">menu</mat-icon>
+        </button-->
+        <span class="title" [routerLink]="['/items', 'trending']">Liste App</span >
+
+        <!-- This fills the remaining space of the current row -->
+        <div class="fill-remaining-space">
+            <form class="search-form">
+                <div class="search-input">
+                    <input placeholder="Search" matInput [formControl]="searchFormCtrl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of searchOptions" [value]="option">{{ option }}</mat-option>
+                    </mat-autocomplete>
+                </div>
+                <button mat-raised-button>
+                    <span aria-label="Search" class="flaticon-search"></span>
+                </button>
+            </form>
+        </div>
+
+        <div class="button-row">
+            <button id="button-search" mat-icon-button (click)="mobileSearch = !mobileSearch">
+                <span aria-label="Search" class="flaticon-search"></span>
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="menuSettings">
+                <span aria-label="Settings" class="flaticon-settings"></span>
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="menuAccount">
+                <span aria-label="Account" class="flaticon-account-circle"></span>
+            </button>
+
+            <mat-menu #menuAccount="matMenu">
+                <button mat-menu-item>
+                    <span aria-label="Login" class="flaticon-login icon-right"></span> Login
+                </button>
+                <button mat-menu-item>
+                    <span aria-label="Register" class="flaticon-account icon-right"></span> Register
+                </button>
+            </mat-menu>
+
+            <mat-menu #menuSettings="matMenu">
+                <button mat-menu-item (click)="toggleTheme()">
+                    <span class="flaticon-drop icon-right"></span> {{themeMenu}}
+                </button>
+            </mat-menu>
+
+        </div>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row id="toolbar-search" *ngIf="mobileSearch" [@slideOutIn]>
+        <button id="button-back" mat-icon-button (click)="mobileSearch = !mobileSearch">
+            <span aria-label="Back" class="flaticon-previous"></span>
+        </button>
+        <!-- This fills the remaining space of the current row -->
+        <div class="fill-remaining-space">
+            <form class="search-form">
+                <div class="search-input">
+                    <input placeholder="Search" matInput [formControl]="searchFormCtrl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of searchOptions" [value]="option">{{ option }}</mat-option>
+                    </mat-autocomplete>
+                </div>
+            </form>
+        </div>
+        <div class="button-row">
+            <button mat-icon-button>
+                <span aria-label="Search" class="flaticon-search"></span>
+            </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,36 @@
+mat-sidenav, mat-drawer {
+    width: 260px;
+
+    @media all and (min-width: 599px) {
+        overflow: hidden;
+    }
+
+    &:hover {
+        overflow-y: auto;
+    }
+
+    .mat-nav-list {
+        padding-bottom: 8px;
+    }
+
+    .list-header {
+        text-transform: uppercase;
+        height: 32px !important;
+        padding-bottom: 0;
+    }
+}
+
+.container-main {
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //TODO z-index: -1 !important; (shadow/anim conflict)
+}
+
+@media (max-width: 599px) {
+    .container-main {
+        top: 56px;
+    }
+}
