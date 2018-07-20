@@ -1,0 +1,232 @@
+@import '~@angular/material/theming';
+
+// CUSTOM SEARCH BAR ------------------------------------------------------------------
+@mixin custom-light-search-bar($theme) {
+    // Extract whichever individual palettes you need from the theme.
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    .search-form {
+        .search-input {
+            background-color: lighten(mat-color($background, app-bar), 7%);
+            border-color: darken(mat-color($background, app-bar), 16%);
+            box-shadow: inset 0 1px 2px darken(mat-color($background, app-bar), 12%);
+
+            input {
+                color: $dark-primary-text;
+            }
+        }
+        button {
+            background-color: darken(mat-color($background, app-bar), 2%);
+            border-color: darken(mat-color($background, app-bar), 16%);
+            box-shadow: inset 0 1px 2px darken(mat-color($background, app-bar), 12%);
+        }
+    }
+}
+
+@mixin custom-dark-search-bar($theme) {
+    // Extract whichever individual palettes you need from the theme.
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    .search-form {
+        .search-input {
+            background-color: darken(mat-color($background, app-bar), 7%);
+            border-color: lighten(mat-color($background, app-bar), 6%);
+            box-shadow: none;
+
+            input {
+                color: $light-primary-text;
+            }
+        }
+        button {
+            background-color: lighten(mat-color($background, app-bar), 6%);
+            border-color: lighten(mat-color($background, app-bar), 6%);
+            box-shadow: none;
+        }
+    }
+}
+
+// CUSTOM CLASSES ---------------------------------------------------------------------
+
+@mixin custom-light-background($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    [class^="flaticon-"]:before, [class*=" flaticon-"] {
+        color: rgba(0, 0, 0, 0.75);
+    }
+    .content {
+        background-color: #FAFAFA !important;
+    }
+    .item-category {
+        background-color: #f0f0f0;
+    }
+    mat-sidenav, mat-drawer {
+        background-color: #F5F5F5 !important;
+
+        mat-nav-list span {
+            color: rgba(0, 0, 0, 0.85);
+        }
+    }
+    mat-toolbar {
+        background-color: white !important;
+        //box-shadow: 0 4px 8px -3px rgba(17, 17, 17, .06); Not working (z-index)
+
+        mat-toolbar-row {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    }
+    mat-card {
+        background-color: white !important;
+
+        mat-card-footer span {
+            color: rgba(0, 0, 0, 0.75);
+        }
+    }
+    mat-divider {
+        @media all and (min-width: 599px) {
+            border-top-color: rgba(0, 0, 0, 0.08) !important;
+        }
+        @media all and (max-width: 599px) {
+            border-top-color: rgba(0, 0, 0, 0.12) !important;
+        }
+    }
+    .mat-nav-list {
+        .active {
+            background-color: rgba(0, 0, 0, 0.08);
+
+            [class^="flaticon-"]:before, [class*=" flaticon-"] {
+                color: mat-color($primary);
+            }
+        }
+    }
+    @media all and (min-width: 599px) {
+        *::-webkit-scrollbar {
+            width: 8px;
+        }
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: #bababa;
+    }
+    *::-webkit-scrollbar-track {
+        background-color: #ededed;
+    }
+}
+
+@mixin custom-dark-background($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    [class^="flaticon-"]:before, [class*=" flaticon-"] {
+        color: rgba(255, 255, 255, 0.75);
+    }
+    .content {
+        background-color: #121212 !important;
+    }
+    .item-category {
+        @media all and (min-width: 599px) {
+            background-color: #3a3a3a;
+        }
+        @media all and (max-width: 599px) {
+            background-color: #464646;
+        }
+    }
+    mat-sidenav, mat-drawer {
+        @media all and (min-width: 599px) {
+            background-color: #1C1C1C !important;
+        }
+        @media all and (max-width: 599px) {
+            background-color: #282828 !important;
+        }
+        mat-nav-list span {
+            color: white;
+        }
+    }
+    mat-toolbar {
+        @media all and (min-width: 599px) {
+            background-color: #232323 !important;
+        }
+        @media all and (max-width: 599px) {
+            background-color: #353535 !important;
+        }
+        //box-shadow: none; (z-index)
+
+        mat-toolbar-row {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    }
+    mat-card {
+        @media all and (min-width: 599px) {
+            background-color: #1f1f1f !important;
+        }
+        @media all and (max-width: 599px) {
+            background-color: #303030 !important;
+        }
+
+        mat-card-footer span {
+            color: rgba(255, 255, 255, 0.75);
+        }
+    }
+    mat-divider {
+        border-top-color: rgba(255, 255, 255, 0.06) !important;
+    }
+    .mat-nav-list {
+        .active {
+            background-color: rgba(255, 255, 255, 0.08);
+
+            [class^="flaticon-"]:before, [class*=" flaticon-"] {
+                color: mat-color($primary);
+            }
+        }
+
+    }
+    @media all and (min-width: 599px) {
+        *::-webkit-scrollbar {
+            width: 8px;
+        }
+    }
+    *::-webkit-scrollbar-thumb {
+        background-color: #5c5c5c;
+    }
+    *::-webkit-scrollbar-track {
+        background-color: #212121;
+    }
+}
+
+// CUSTOM FONT -------------------------------------------------------------------------
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+$typography: mat-typography-config(
+    $font-family: 'Nunito, Tahoma, Arial'
+);
+
+// CUSTOM THEME ------------------------------------------------------------------------
+// **Be sure that you only ever include this mixin once!**
+@include mat-core($typography);
+
+// Define the default theme (same as the example above).
+$app-light-primary: mat-palette($mat-blue);
+$app-light-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-light-warn: mat-palette($mat-red);
+$app-light-theme: mat-light-theme($app-light-primary, $app-light-accent, $app-light-warn);
+
+// Define an alternate dark theme.
+$app-dark-primary: mat-palette($mat-blue);
+$app-dark-accent: mat-palette($mat-pink, A200, A100, A400);
+$app-dark-warn: mat-palette($mat-red);
+$app-dark-theme: mat-dark-theme($app-dark-primary, $app-dark-accent, $app-dark-warn);
+
+// Include the default theme styles.
+@include angular-material-theme($app-light-theme);
+@include custom-light-search-bar($app-light-theme);
+@include custom-light-background($app-light-theme);
+
+// Include the secondary theme styles.
+.app-dark-theme {
+    @include angular-material-theme($app-dark-theme);
+    @include custom-dark-search-bar($app-dark-theme);
+    @include custom-dark-background($app-dark-theme);
+}
+
+
+

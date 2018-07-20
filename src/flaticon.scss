@@ -1,0 +1,107 @@
+/*
+  Flaticon icon font: Flaticon
+  Creation date: 18/06/2018 02:50
+  */
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("./assets/fonts/flaticon.eot");
+    src: url("./assets/fonts/flaticon.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/flaticon.woff") format("woff"),
+    url("./assets/fonts/flaticon.ttf") format("truetype"),
+    url("./assets/fonts/flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("./assets/fonts/flaticon.svg#Flaticon") format("svg");
+    }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"] {
+    line-height: 35px !important;
+    vertical-align: middle !important;
+    height: auto !important;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon, serif;
+    font-size: 22px;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+[class*="flaticon-"] {
+    &.icon-left {
+        margin-left: 16px;
+    }
+    &.icon-right {
+        margin-right: 16px;
+    }
+    &.icon-both {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+}
+
+.flaticon-people:before { content: "\f100"; }
+.flaticon-bizarre:before { content: "\f101"; }
+.flaticon-news:before { content: "\f102"; }
+.flaticon-lifestyle:before { content: "\f103"; }
+.flaticon-general:before { content: "\f104"; }
+.flaticon-technology:before { content: "\f105"; }
+.flaticon-science:before { content: "\f106"; }
+.flaticon-entertainment:before { content: "\f107"; }
+.flaticon-tick:before { content: "\f108"; }
+.flaticon-comment:before { content: "\f109"; }
+.flaticon-warning-circle:before { content: "\f10a"; }
+.flaticon-happy-face:before { content: "\f10b"; }
+.flaticon-search-big:before { content: "\f10c"; }
+.flaticon-sad-face:before { content: "\f10d"; }
+.flaticon-add-circle:before { content: "\f10e"; }
+.flaticon-minus-circle:before { content: "\f10f"; }
+.flaticon-neutral-face:before { content: "\f110"; }
+.flaticon-menu:before { content: "\f111"; }
+.flaticon-menu-circle:before { content: "\f112"; }
+.flaticon-delete:before { content: "\f113"; }
+.flaticon-delete-circle:before { content: "\f114"; }
+.flaticon-settings:before { content: "\f115"; }
+.flaticon-arrow-previous:before { content: "\f116"; }
+.flaticon-link:before { content: "\f117"; }
+.flaticon-upload:before { content: "\f118"; }
+.flaticon-love-filled:before { content: "\f119"; }
+.flaticon-love:before { content: "\f11a"; }
+.flaticon-expand:before { content: "\f11b"; }
+.flaticon-refresh:before { content: "\f11c"; }
+.flaticon-microphone:before { content: "\f11d"; }
+.flaticon-trending:before { content: "\f11e"; }
+.flaticon-like:before { content: "\f11f"; }
+.flaticon-dislike:before { content: "\f120"; }
+.flaticon-like-filled:before { content: "\f121"; }
+.flaticon-dislike-filled:before { content: "\f122"; }
+.flaticon-calendar:before { content: "\f123"; }
+.flaticon-home:before { content: "\f124"; }
+.flaticon-drop-filled:before { content: "\f125"; }
+.flaticon-drop:before { content: "\f126"; }
+.flaticon-edit:before { content: "\f127"; }
+.flaticon-account-circle:before { content: "\f128"; }
+.flaticon-sort:before { content: "\f129"; }
+.flaticon-flag:before { content: "\f12a"; }
+.flaticon-speech:before { content: "\f12b"; }
+.flaticon-lock:before { content: "\f12c"; }
+.flaticon-logout:before { content: "\f12d"; }
+.flaticon-login:before { content: "\f12e"; }
+.flaticon-thunder:before { content: "\f12f"; }
+.flaticon-account:before { content: "\f130"; }
+.flaticon-share:before { content: "\f131"; }
+.flaticon-search:before { content: "\f132"; }
+.flaticon-shrink:before { content: "\f133"; }
+.flaticon-next-circle:before { content: "\f134"; }
+.flaticon-question-circle:before { content: "\f135"; }
+.flaticon-previous:before { content: "\f136"; }
+.flaticon-previous-circle:before { content: "\f137"; }
+.flaticon-send:before { content: "\f138"; }
